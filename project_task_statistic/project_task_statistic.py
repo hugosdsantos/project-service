@@ -24,8 +24,6 @@ from openerp import models, fields
 class Task(models.Model):
     _inherit = 'project.task'
 
-    #date_open = fields.Datetime('Date Open')
-    #date_closed = fields.Datetime('Date Closed')
     day_close = fields.Float('Day Close')
     day_open = fields.Float('Day Open')
     working_hours_close = fields.Float('Working Hours Close')
