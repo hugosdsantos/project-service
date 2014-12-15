@@ -23,9 +23,10 @@
     'summary': 'Add a new tab Statistics to the task form',
     'version': '1.0',
     'category': 'Project Management',
-    'description': """\
-Adds a new tab Staticits to the task form, similar to the Issue statistics.
-It could be used for information alone, or to use with Automated Actions or
+    'description': """
+Adds a new tab Statistics to the task form, similar to the Issue statistics.
+It could be used for information alone, or to use with Automated Actions.
+    """,
     'author': 'Hugo Santos',
     'depends': [
         'project',

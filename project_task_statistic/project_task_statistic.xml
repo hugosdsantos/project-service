@@ -12,13 +12,11 @@
                 <page string="Description" position="after">
                     <page name="statistics_page" string="Statistics">
                         <group>
-                            <field name="date_open" />
-                            <field name="date_closed" />
                             <field name="day_open" />
                             <field name="day_close" />
                             <field name="working_hours_open" />
                             <field name="working_hours_close" />
-                            
+
                             <button name="action_close_task_date_end" string="_Date End Update" type="object" class="oe_highlight"/>
                         </group>
                     </page>
