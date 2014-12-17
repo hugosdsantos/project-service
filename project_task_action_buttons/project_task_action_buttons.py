@@ -27,15 +27,6 @@ class project_task_action_buttons(models.Model):
     @api.one
     @api.returns('project.task.type')
     def _get_state_stage(self, state_name):
-        """ Generic method for setting case. This methods wraps the update
-            of the record, as well as call to _action and browse_record
-            case setting to fill the cache.
-
-            :params: state_name: the new value of the state, such as
-                     'draft' or 'close'.
-            :params: update_values: values that will be added with the state
-                     update when writing values to the record.
-        """
         if self.project_id:
             stages = self.project_id.type_ids
             states = stages.filtered(lambda r: r.state == state_name)
@@ -46,12 +37,28 @@ class project_task_action_buttons(models.Model):
             raise Exception('No Stage for "%s" was found!' % state_name)
         return states[0]
 
+    #
+    # Keep button and case API from 7.0
+    #
+
     @api.one
-    def button_cancel(self):
+    def case_cancel(self):
         cancel_stage = self._get_state_stage('cancelled')
         self.stage_id = cancel_stage
 
     @api.one
-    def button_close(self):
-        done_stage = self._get_state_stage('cancelled')
+    def do_cancel(self):
+        self.case_cancel()
+
+    @api.one
+    def case_close(self):
+        done_stage = self._get_state_stage('done')
         self.stage_id = done_stage
+
+    @api.one
+    def do_close(self):
+        self.case_close()
+
+    @api.one
+    def action_close(self):
+        self.case_close()

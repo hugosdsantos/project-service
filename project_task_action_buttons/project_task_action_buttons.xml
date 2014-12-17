@@ -10,10 +10,10 @@
             <field name="arch" type="xml">
 
                 <field name="stage_id" position="before">
-                    <button name="button_close" string="Done"
+                    <button name="action_close" string="Done"
                             class="oe_highlight" states="draft,open,pending"
                             type="object" groups="base.group_user"/>
-                    <button name="button_cancel" string="Cancel Task"
+                    <button name="do_cancel" string="Cancel Task"
                             states="draft,open,pending"
                             type="object" groups="base.group_user"/>
                 </field>
