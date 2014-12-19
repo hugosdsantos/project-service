@@ -18,6 +18,13 @@
           </field>
         </field>
 
+        <field name="description" position="replace" />
+        <page string="Description" position="before">
+            <page string="Briefing">
+                <field name="description" placeholder="Briefing description for the task..." />
+            </page>
+        </page>
+
       </field>
     </record>
 
