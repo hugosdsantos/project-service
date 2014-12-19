@@ -48,8 +48,8 @@
             <field name="arch" type="xml">
 
                     <field name="name" position="after">
-                        <filter name="analytic_account_id"/>
-                        <filter name="location_id"/>
+                        <field name="analytic_account_id"/>
+                        <field name="location_id"/>
                     </field>
 
            </field>
