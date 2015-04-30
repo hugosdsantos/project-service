@@ -32,6 +32,8 @@ class project_task_close_action(models.Model):
             if not(self.date_closed):
                 vals['date_closed'] = fields.datetime.now(
                     ).strftime('%Y-%m-%d %H:%M:%S')
+                if not(self.date_opened):
+                    vals['date_opened'] = vals['date_closed']
         else:
             vals['date_closed'] = None
         res = super(project_task_close_action, self).write(vals)
