@@ -23,7 +23,6 @@
     'version': '1.0',
     "category": "Project Management",
     'description': """\
-
 """,
     'author': 'Daniel Reis',
     'website': '',
@@ -31,8 +30,10 @@
         'analytic', 'hr'
     ],
     'data': [
-        'service_item_view.xml',
+        'security/contract_security.xml',
         'security/ir.model.access.csv',
+        'analytic_account_view.xml',
+        'service_item_view.xml',
     ],
     'installable': True,
 }

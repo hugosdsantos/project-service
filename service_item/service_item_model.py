@@ -18,7 +18,7 @@
 #
 ##############################################################################
 
-from openerp import models, fields
+from openerp import models, fields, api, exceptions
 
 
 class ServiceItem(models.Model):
@@ -29,28 +29,47 @@ class ServiceItem(models.Model):
     code = fields.Char('Code')
     site_id = fields.Many2one(string='Site', comodel_name='res.partner')
     state = fields.Selection(
+        default='draft',
         string='State',
+        required='True',
         selection=[('draft', 'Draft'),
                    ('active', 'Active'),
                    ('close', 'Closed')])
     date_installation = fields.Date('Installation Date')
 
     analytic_account_id = fields.Many2one(
-        string='Contract', index=True,
+        string='Contract',
         comodel_name='account.analytic.account')
+
     department_id = fields.Many2one(
-        string='Department', store=True, index=True,
+        string='Department',
         related='analytic_account_id.department_id')
+
     partner_id = fields.Many2one(
-        string='Customer', store=True, index=True,
+        string='Customer',
         related='analytic_account_id.partner_id')
 
     item_group_id = fields.Many2one(
         string="Item Group",
         comodel_name='service.item.group')
+
     contract_group_id = fields.Many2one(
         string="Contract Group",
         comodel_name='service.contract.group')
+
+    @api.one
+    def action_close(self):
+        self.state = 'active'
+
+    @api.one
+    def write(self, vals):
+        res = super(ServiceItem, self).write(vals)
+        if self.state in ('active') and self.item_group_id and
+        'A DEFINIR' in self.item_group_id.name:
+                raise exceptions.ValidationError(
+                    'Falta definir corretamente o campo Item.')
+
+        return res
 
 
 class ServiceItemGroup(models.Model):

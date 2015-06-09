@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="analytic_account_form" model="ir.ui.view">
+            <field name="name">analytic.account.form</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+            <field name="arch" type="xml">
+                <page name="contract_page" position="before">
+                    <page string="Services Items">
+                        <field name="service_items_ids" context="{'default_partner_id': partner_id}">
+                            <tree string="Service Item" editable="top">
+                                <field name="site_id" domain="[('parent_id','=',partner_id)]" context="{'default_parent_id': partner_id}"/>
+                                <field name="contract_group_id" required="True"/>
+                                <field name="item_group_id" required="True"/>
+                                <field name="date_installation"/>
+                                <field name="state"/>
+                                <button name="action_close" attrs="{'invisible':[('state','not in',['draft'])]}" string="Done" class="oe_highlight" type="object"/>
+                                <field name="partner_id" invisible="True"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+
+        <record id="action_analytic_account_form" model="ir.actions.act_window">
+            <field name="name">Contracts</field>
+            <field name="res_model">account.analytic.account</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Services"
+            id="menu_service_management"
+            parent="base.menu_main_pm"
+            sequence="2"/>
+
+        <menuitem action="action_analytic_account_form"
+                  name="Contracts"
+                  id="menu_analytic_account"
+                  parent="menu_service_management"
+                  sequence="5"/>
+
+    </data>
+</openerp>

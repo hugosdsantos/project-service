@@ -1,0 +1,195 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* service_item
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-06-02 11:25+0000\n"
+"PO-Revision-Date: 2015-06-02 11:25+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: service_item
+#: model:ir.actions.act_window,help:service_item.service_contract_group
+#: model:ir.actions.act_window,help:service_item.service_item
+#: model:ir.actions.act_window,help:service_item.service_item_group
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a (...)\n"
+"              </p><p>\n"
+"                Define (...)\n"
+"              </p>\n"
+"            "
+msgstr ""
+
+#. module: service_item
+#: view:service.item:service_item.view_service_item_filter
+#: selection:service.item,state:0
+msgid "Active"
+msgstr ""
+
+#. module: service_item
+#: selection:service.item,state:0
+msgid "Closed"
+msgstr ""
+
+#. module: service_item
+#: field:service.item,code:0
+msgid "Code"
+msgstr ""
+
+#. module: service_item
+#: field:service.item,analytic_account_id:0
+msgid "Contract"
+msgstr ""
+
+#. module: service_item
+#: field:service.item,contract_group_id:0
+msgid "Contract Group"
+msgstr ""
+
+#. module: service_item
+#: model:ir.ui.menu,name:service_item.menu_service_contract_group
+msgid "Contract Groups"
+msgstr ""
+
+#. module: service_item
+#: field:service.contract.group,create_uid:0
+#: field:service.item,create_uid:0
+#: field:service.item.group,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: service_item
+#: field:service.contract.group,create_date:0
+#: field:service.item,create_date:0
+#: field:service.item.group,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: service_item
+#: view:service.item:service_item.view_service_item_filter
+msgid "Customer"
+msgstr ""
+
+#. module: service_item
+#: view:service.item:service_item.view_service_item_filter
+msgid "Department"
+msgstr ""
+
+#. module: service_item
+#: field:service.contract.group,description:0
+#: field:service.item.group,description:0
+msgid "Description"
+msgstr ""
+
+#. module: service_item
+#: view:service.item:service_item.view_service_item_filter
+#: selection:service.item,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: service_item
+#: view:service.item:service_item.view_service_item_filter
+msgid "Group By"
+msgstr ""
+
+#. module: service_item
+#: field:service.contract.group,id:0
+#: field:service.item,id:0
+#: field:service.item.group,id:0
+msgid "ID"
+msgstr ""
+
+#. module: service_item
+#: field:service.item,date_installation:0
+msgid "Installation Date"
+msgstr ""
+
+#. module: service_item
+#: view:service.item:service_item.view_service_item_filter
+#: field:service.item,item_group_id:0
+msgid "Item Group"
+msgstr ""
+
+#. module: service_item
+#: model:ir.ui.menu,name:service_item.menu_service_item_group
+msgid "Item Groups"
+msgstr ""
+
+#. module: service_item
+#: field:service.contract.group,write_uid:0
+#: field:service.item,write_uid:0
+#: field:service.item.group,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: service_item
+#: field:service.contract.group,write_date:0
+#: field:service.item,write_date:0
+#: field:service.item.group,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: service_item
+#: field:service.contract.group,name:0
+#: field:service.item,name:0
+#: field:service.item.group,name:0
+msgid "Name"
+msgstr ""
+
+#. module: service_item
+#: model:ir.actions.act_window,name:service_item.service_contract_group
+#: model:ir.model,name:service_item.model_service_contract_group
+msgid "Service Contract Group"
+msgstr ""
+
+#. module: service_item
+#: view:service.contract.group:service_item.service_contract_group_tree
+msgid "Service Contract group"
+msgstr ""
+
+#. module: service_item
+#: model:ir.actions.act_window,name:service_item.service_item
+#: model:ir.model,name:service_item.model_service_item
+#: view:service.item:service_item.service_item_tree
+msgid "Service Item"
+msgstr ""
+
+#. module: service_item
+#: model:ir.actions.act_window,name:service_item.service_item_group
+#: model:ir.model,name:service_item.model_service_item_group
+msgid "Service Item Group"
+msgstr ""
+
+#. module: service_item
+#: model:ir.ui.menu,name:service_item.menu_service_item
+msgid "Service Items"
+msgstr ""
+
+#. module: service_item
+#: view:service.item.group:service_item.service_item_group_tree
+msgid "Service Items group"
+msgstr ""
+
+#. module: service_item
+#: model:ir.ui.menu,name:service_item.menu_project_config_services
+msgid "Services"
+msgstr ""
+
+#. module: service_item
+#: view:service.item:service_item.view_service_item_filter
+#: field:service.item,site_id:0
+msgid "Site"
+msgstr ""
+
+#. module: service_item
+#: field:service.item,state:0
+msgid "State"
+msgstr ""
+
