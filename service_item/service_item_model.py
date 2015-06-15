@@ -64,8 +64,8 @@ class ServiceItem(models.Model):
     @api.one
     def write(self, vals):
         res = super(ServiceItem, self).write(vals)
-        if self.state in ('active') and self.item_group_id and
-        'A DEFINIR' in self.item_group_id.name:
+        if (self.state in ('active') and self.item_group_id and
+            'A DEFINIR' in self.item_group_id.name):
                 raise exceptions.ValidationError(
                     'Falta definir corretamente o campo Item.')
 

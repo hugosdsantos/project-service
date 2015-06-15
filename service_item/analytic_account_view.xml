@@ -12,8 +12,8 @@
                         <field name="service_items_ids" context="{'default_partner_id': partner_id}">
                             <tree string="Service Item" editable="top">
                                 <field name="site_id" domain="[('parent_id','=',partner_id)]" context="{'default_parent_id': partner_id}"/>
-                                <field name="contract_group_id" required="True"/>
                                 <field name="item_group_id" required="True"/>
+                                <field name="contract_group_id" required="True"/>
                                 <field name="date_installation"/>
                                 <field name="state"/>
                                 <button name="action_close" attrs="{'invisible':[('state','not in',['draft'])]}" string="Done" class="oe_highlight" type="object"/>
@@ -25,21 +25,32 @@
             </field>
         </record>
 
+        <record id="view_analytic_account_tree" model="ir.ui.view">
+            <field name="name">analytic.account.tree</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="account.view_account_analytic_account_list"/>
+            <field name="arch" type="xml">
 
-        <record id="action_analytic_account_form" model="ir.actions.act_window">
-            <field name="name">Contracts</field>
-            <field name="res_model">account.analytic.account</field>
-            <field name="view_mode">tree,form</field>
+                <field name="code" position="before">
+                    <field name="department_id"/>
+                </field>
+
+            </field>
         </record>
 
         <menuitem name="Services"
-            id="menu_service_management"
-            parent="base.menu_main_pm"
-            sequence="2"/>
+                  id="menu_service_management"
+                  parent="base.menu_main_pm"
+                  sequence="2"/>
 
-        <menuitem action="action_analytic_account_form"
-                  name="Contracts"
+        <act_window id="action_analytic_account_form"
+                    name="Contracts"
+                    res_model="account.analytic.account"
+                    view_mode="tree,form"
+                    domain="[('parent_id','=',False)]"/>
+        <menuitem name="Contracts"
                   id="menu_analytic_account"
+                  action="action_analytic_account_form"
                   parent="menu_service_management"
                   sequence="5"/>
 

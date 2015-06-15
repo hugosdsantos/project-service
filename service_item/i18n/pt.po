@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-02 11:25+0000\n"
-"PO-Revision-Date: 2015-06-02 13:14-0000\n"
+"POT-Creation-Date: 2015-06-15 14:53+0000\n"
+"PO-Revision-Date: 2015-06-15 16:10-0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,23 +18,15 @@ msgstr ""
 "X-Generator: Poedit 1.6.5\n"
 
 #. module: service_item
-#: model:ir.actions.act_window,help:service_item.service_contract_group
-#: model:ir.actions.act_window,help:service_item.service_item
-#: model:ir.actions.act_window,help:service_item.service_item_group
-msgid ""
-"<p class=\"oe_view_nocontent_create\">\n"
-"                Click to add a (...)\n"
-"              </p><p>\n"
-"                Define (...)\n"
-"              </p>\n"
-"            "
-msgstr ""
-
-#. module: service_item
 #: view:service.item:service_item.view_service_item_filter
 #: selection:service.item,state:0
 msgid "Active"
 msgstr "Ativo"
+
+#. module: service_item
+#: model:ir.model,name:service_item.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Contrato"
 
 #. module: service_item
 #: selection:service.item,state:0
@@ -62,6 +54,13 @@ msgid "Contract Groups"
 msgstr "Tipos de Contrato"
 
 #. module: service_item
+#: model:ir.actions.act_window,name:service_item.action_analytic_account_form
+#: model:ir.module.category,name:service_item.module_contract_management
+#: model:ir.ui.menu,name:service_item.menu_analytic_account
+msgid "Contracts"
+msgstr "Contratos"
+
+#. module: service_item
 #: field:service.contract.group,create_uid:0 field:service.item,create_uid:0
 #: field:service.item.group,create_uid:0
 msgid "Created by"
@@ -71,7 +70,7 @@ msgstr "Criado por"
 #: field:service.contract.group,create_date:0 field:service.item,create_date:0
 #: field:service.item.group,create_date:0
 msgid "Created on"
-msgstr "Criado em"
+msgstr "Criado a"
 
 #. module: service_item
 #: view:service.item:service_item.view_service_item_filter
@@ -90,6 +89,12 @@ msgid "Description"
 msgstr "Descrição"
 
 #. module: service_item
+#: view:account.analytic.account:service_item.analytic_account_form
+#: view:service.item:service_item.service_item_tree
+msgid "Done"
+msgstr "Fechar"
+
+#. module: service_item
 #: view:service.item:service_item.view_service_item_filter
 #: selection:service.item,state:0
 msgid "Draft"
@@ -98,7 +103,7 @@ msgstr "Pendente"
 #. module: service_item
 #: view:service.item:service_item.view_service_item_filter
 msgid "Group By"
-msgstr "Agrupado por"
+msgstr "Agrupar por"
 
 #. module: service_item
 #: field:service.contract.group,id:0 field:service.item,id:0
@@ -115,12 +120,12 @@ msgstr "Data de Instalação"
 #: view:service.item:service_item.view_service_item_filter
 #: field:service.item,item_group_id:0
 msgid "Item Group"
-msgstr "Item"
+msgstr "Tipo de Serviço"
 
 #. module: service_item
 #: model:ir.ui.menu,name:service_item.menu_service_item_group
 msgid "Item Groups"
-msgstr "Tipos de Item"
+msgstr "Tipos de Serviços"
 
 #. module: service_item
 #: field:service.contract.group,write_uid:0 field:service.item,write_uid:0
@@ -133,6 +138,11 @@ msgstr "Atualizado por"
 #: field:service.item.group,write_date:0
 msgid "Last Updated on"
 msgstr "Atualizado a"
+
+#. module: service_item
+#: model:res.groups,name:service_item.group_contract_manager
+msgid "Manager"
+msgstr "Gestor"
 
 #. module: service_item
 #: field:service.contract.group,name:0 field:service.item,name:0
@@ -152,32 +162,39 @@ msgid "Service Contract group"
 msgstr "Tipos de Contrato de Serviços"
 
 #. module: service_item
-#: model:ir.actions.act_window,name:service_item.service_item
+#: view:account.analytic.account:service_item.analytic_account_form
+#: model:ir.actions.act_window,name:service_item.action_service_item
 #: model:ir.model,name:service_item.model_service_item
 #: view:service.item:service_item.service_item_tree
 msgid "Service Item"
-msgstr "Item de Serviço"
+msgstr "Tipo de Serviço"
 
 #. module: service_item
 #: model:ir.actions.act_window,name:service_item.service_item_group
 #: model:ir.model,name:service_item.model_service_item_group
 msgid "Service Item Group"
-msgstr "Tipos de Item de Serviço"
+msgstr "Tipos de Serviço"
 
 #. module: service_item
 #: model:ir.ui.menu,name:service_item.menu_service_item
 msgid "Service Items"
-msgstr "Itens de Serviço"
+msgstr "Tipos de Serviço"
 
 #. module: service_item
 #: view:service.item.group:service_item.service_item_group_tree
 msgid "Service Items group"
-msgstr "Tipos de Item de Serviço"
+msgstr "Tipo de Serviço"
 
 #. module: service_item
 #: model:ir.ui.menu,name:service_item.menu_project_config_services
+#: model:ir.ui.menu,name:service_item.menu_service_management
 msgid "Services"
-msgstr "Serviço"
+msgstr "Serviços"
+
+#. module: service_item
+#: view:account.analytic.account:service_item.analytic_account_form
+msgid "Services Items"
+msgstr "Tipos de Serviços"
 
 #. module: service_item
 #: view:service.item:service_item.view_service_item_filter
@@ -189,3 +206,8 @@ msgstr "Localização"
 #: field:service.item,state:0
 msgid "State"
 msgstr "Estado"
+
+#. module: service_item
+#: model:res.groups,name:service_item.group_contract_user
+msgid "User"
+msgstr "Utilizador"
